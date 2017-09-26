@@ -1,0 +1,21 @@
+@import '../scss/styles';
+
+.container {
+	color: $offwhite;
+
+	.logo {
+		background-color: $darkergrey;
+		padding: 20px;
+
+		.logo-img {
+			animation: Homepage-logo-spin infinite 20s linear;
+			height: 80px;
+		}	
+	}
+
+	.content {
+		background-color: $darkgrey;
+		padding: 20px;
+		color: white;
+	}
+}
