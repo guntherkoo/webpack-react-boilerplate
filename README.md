@@ -1,19 +1,19 @@
-# Base React App Boilerplate
-### Created this boilerplate to quickly start a simple ReactJS app.
+# Webpack React Boilerplate
+Created this boilerplate to quickly start a simple ReactJS app.
 
-## Initialize Project
+## Initialize project
 - `npm install`
 - `yarn start`
 - Serve [localhost:3000](http://localhost:3000/)
 
-## Build for Production
+## Build for production
 - `yarn build`
 
 ## To view production build
 - `yarn global add serve`
 - `serve -s build` [localhost:5000](http://localhost:5000/)
 
-## Technology Used
+## Technology used
 - Webpack
 - ReactJS
 - Foundation ZURB // Flex Grid
