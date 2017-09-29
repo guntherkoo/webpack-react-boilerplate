@@ -6,10 +6,10 @@ export default class Homepage extends Component {
 	render() {
 		return (
 			<div className={styles('container', 'row')}>
-				<div className={styles('logo', 'small-2')}>
+				<div className={styles('logo')}>
 					<img src={logo} className={styles('logo-img')} alt="logo" />
 				</div>
-				<div className={styles('content', 'columns')}>
+				<div className={styles('content')}>
 					<h2>
 						Welcome to React
 					</h2>
