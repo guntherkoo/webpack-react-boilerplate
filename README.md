@@ -16,8 +16,8 @@ Created this boilerplate to quickly start a simple ReactJS app.
 ## Technology used
 - Webpack
 - ReactJS
-- Foundation ZURB // Flex Grid
 - Normalize // SCSS
+- Susy 2
 - Classnames-Loader
 - CSS Modules
 - Autoprefixer
