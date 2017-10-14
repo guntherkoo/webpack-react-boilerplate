@@ -94,6 +94,7 @@
   },
   "devDependencies": {
     "classnames": "^2.2.5",
-    "classnames-loader": "^2.0.0"
+    "classnames-loader": "^2.0.0",
+    "react-router-dom": "^4.2.2"
   }
 }
