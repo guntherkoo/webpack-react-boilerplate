@@ -74,7 +74,7 @@ module.exports = {
     // We placed these paths second because we want `node_modules` to "win"
     // if there are any conflicts. This matches Node resolution mechanism.
     // https://github.com/facebookincubator/create-react-app/issues/253
-    modules: ['node_modules', paths.appNodeModules].concat(
+    modules: ['node_modules', paths.appNodeModules, path.resolve(__dirname, '../src/')].concat(
       // It is guaranteed to exist because we tweak it in `env.js`
       process.env.NODE_PATH.split(path.delimiter).filter(Boolean)
     ),
@@ -137,7 +137,7 @@ module.exports = {
             loader: require.resolve('url-loader'),
             options: {
               limit: 10000,
-              name: 'static/media/[name].[hash:8].[ext]',
+              name: 'src/assets/[name].[hash:8].[ext]',
             },
           },
           // Process JS with Babel.
@@ -151,6 +151,13 @@ module.exports = {
               // It enables caching results in ./node_modules/.cache/babel-loader/
               // directory for faster rebuilds.
               cacheDirectory: true,
+            },
+          },
+          {
+            test: /\.(woff)$/,
+            loader: require.resolve('file-loader'),
+            options: {
+              name: 'src/assets/[name].[hash:8].[ext]',
             },
           },
           // "postcss" loader applies autoprefixer to our CSS.
@@ -209,7 +216,7 @@ module.exports = {
             exclude: [/\.js$/, /\.html$/, /\.json$/],
             loader: require.resolve('file-loader'),
             options: {
-              name: 'static/media/[name].[hash:8].[ext]',
+              name: 'src/assets/[name].[hash:8].[ext]',
             },
           },
         ],
