@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Route, BrowserRouter, Link, Switch } from 'react-router-dom';
+import { Route, HashRouter, Link, Switch } from 'react-router-dom';
 
 import Homepage from './components/Homepage';
 import Subpage from './components/Subpage';
@@ -32,7 +32,7 @@ export default class App extends Component {
 
 	render() {
 		return (
-			<BrowserRouter>
+			<HashRouter>
 				<div>
 					<div>
 						<Link to='/'>Homepage</Link>
@@ -43,7 +43,7 @@ export default class App extends Component {
 						<Route path='/subpage' exact component={Subpage} />
 					</Switch>
 				</div>
-			</BrowserRouter>
+			</HashRouter>
 		)
 	}
 }
