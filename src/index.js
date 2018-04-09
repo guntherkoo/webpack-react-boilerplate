@@ -1,14 +1,31 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Route, HashRouter, Link, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { createStore, compose } from 'redux';
+import { Route, HashRouter, Switch } from 'react-router-dom';
+
+import reducer from './reducers';
 
 import Homepage from './components/Homepage';
-import Subpage from './components/Subpage';
 
 const ua = window.navigator.userAgent;
 const html = document.querySelector('html');
 
 export default class App extends Component {
+	constructor(props) {
+		super(props);
+
+		const initial_states = {
+			intro: false
+		}
+
+		const dev_tools = (window.devToolsExtension ? window.devToolsExtension() : f => f);
+
+		const enhancer = compose(dev_tools);
+
+		this.store = createStore(reducer, initial_states, enhancer);
+	}
+
 	componentWillMount() {
 		// User Agent Detect 
 		if ( !!ua.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i)) {
@@ -32,18 +49,13 @@ export default class App extends Component {
 
 	render() {
 		return (
-			<HashRouter>
-				<div>
-					<div>
-						<Link to='/'>Homepage</Link>
-						<Link to='/subpage'>Subpage</Link>
-					</div>
+			<Provider store={this.store}>
+				<HashRouter>
 					<Switch>
 						<Route path='/' exact component={Homepage} />
-						<Route path='/subpage' exact component={Subpage} />
 					</Switch>
-				</div>
-			</HashRouter>
+				</HashRouter>
+			</Provider>
 		)
 	}
 }
