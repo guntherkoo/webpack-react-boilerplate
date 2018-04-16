@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, compose } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
 import { Route, HashRouter, Switch } from 'react-router-dom';
 
 import reducer from './reducers';
+import SettingsMiddlewares from './middlewares/SettingsMiddlewares';
 
 import Homepage from './components/Homepage';
 
@@ -16,12 +17,25 @@ export default class App extends Component {
 		super(props);
 
 		const initial_states = {
-			intro: false
+			intro: false,
+			view_type: 'default'
+		};
+
+		if (window.localStorage.hasOwnProperty('CURRENT_LIST_VIEW')) {
+			const view_type = window.localStorage.getItem('CURRENT_LIST_VIEW');
+			Object.assign(initial_states, {
+				view_type,
+			});
 		}
 
 		const dev_tools = (window.devToolsExtension ? window.devToolsExtension() : f => f);
 
-		const enhancer = compose(dev_tools);
+		const middlewares = [
+			SettingsMiddlewares
+		];
+
+		const enhancer = compose(applyMiddleware(...middlewares), dev_tools);
+		// const enhancer = compose(dev_tools);
 
 		this.store = createStore(reducer, initial_states, enhancer);
 	}
