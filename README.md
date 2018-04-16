@@ -16,6 +16,8 @@ Created this boilerplate to quickly start a simple ReactJS app with a quick Redu
 ## Technology used
 - Webpack
 - ReactJS
+- React Redux
+- Redux Middleware
 - Normalize // SCSS
 - Classnames-Loader
 - CSS Modules
