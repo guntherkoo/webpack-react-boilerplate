@@ -1,5 +1,5 @@
 # Webpack React Boilerplate
-Created this boilerplate to quickly start a simple ReactJS app.
+Created this boilerplate to quickly start a simple ReactJS app with a quick Redux store setup.
 
 ## Initialize project
 - `npm install`
