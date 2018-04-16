@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import logo from 'assets/svg/logo.svg';
-import styles from './Homepage.scss';
+import s from './Homepage.scss';
 
 export default class Homepage extends Component {
 	static PropTypes = {
@@ -37,21 +37,32 @@ export default class Homepage extends Component {
 	}
 
 	render() {
+		const container_classname = s('container', 'row', {
+			'advanced': this.state.view_type === 'advanced'
+		});
+
 		return (
-			<div className={styles('container', 'row')}>
-				<div className={styles('logo')}>
-					<img src={logo} className={styles('logo-img')} alt="logo" />
+			<div className={container_classname}>
+				<div className={s('logo')}>
+					<img src={logo} alt='logo' />
 				</div>
-				<div className={styles('content')}>
+				<div className={s('content')}>
 					<h2>
 						Welcome to React
 					</h2>
-					<p className={styles('intro')}>
+					<p className={s('intro')}>
 						To get started, edit <code>src/App.js</code> and save to reload.
 					</p>
-					<button type='button' onClick={this.switchView}>
-						{this.state.view_type}
-					</button>
+					<p>
+						<span>
+							Switch views button 
+						</span>
+						<span>
+							<button type='button' onClick={this.switchView}>
+								{this.state.view_type}
+							</button>
+						</span>
+					</p>
 				</div>
 			</div>
 		);

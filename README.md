@@ -17,7 +17,6 @@ Created this boilerplate to quickly start a simple ReactJS app.
 - Webpack
 - ReactJS
 - Normalize // SCSS
-- Susy 2
 - Classnames-Loader
 - CSS Modules
 - Autoprefixer

@@ -2,25 +2,29 @@
 
 .container {
 	margin: 0 auto;
+	padding: 2rem 0;
 	background-color: $darkgrey;
 	color: $offwhite;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
+	transition: background-color .2s $easeOutCubic;
+
+	&.advanced {
+		background-color: $darkergrey;
+	}
 
 	.logo {
-		@include span(2);
-		padding: 2rem 0;
-
-		.logo-img {
+		img {
 			animation: Homepage-logo-spin infinite 20s linear;
 			height: 8rem;
 		}	
 	}
 
 	.content {
-		@include span(10);
-		padding: 2rem;
 		color: white;
+	}
+
+	button {
+		margin: 1.5rem 1rem 0;
 	}
 }

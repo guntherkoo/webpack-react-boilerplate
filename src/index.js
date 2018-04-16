@@ -28,6 +28,7 @@ export default class App extends Component {
 			});
 		}
 
+		// Redux Devtool Extension
 		const dev_tools = (window.devToolsExtension ? window.devToolsExtension() : f => f);
 
 		const middlewares = [
@@ -35,7 +36,6 @@ export default class App extends Component {
 		];
 
 		const enhancer = compose(applyMiddleware(...middlewares), dev_tools);
-		// const enhancer = compose(dev_tools);
 
 		this.store = createStore(reducer, initial_states, enhancer);
 	}
