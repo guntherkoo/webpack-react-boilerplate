@@ -54,14 +54,10 @@ export default class Homepage extends Component {
 						To get started, edit <code>src/App.js</code> and save to reload.
 					</p>
 					<p>
-						<span>
-							Switch views button 
-						</span>
-						<span>
-							<button type='button' onClick={this.switchView}>
-								{this.state.view_type}
-							</button>
-						</span>
+						Switch views button 
+						<button type='button' onClick={this.switchView}>
+							{this.state.view_type}
+						</button>
 					</p>
 				</div>
 			</div>
