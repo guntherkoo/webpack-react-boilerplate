@@ -13,7 +13,7 @@ export default class Homepage extends Component {
 		view_type: this.props.view_type
 	}
 
-	constructor(props){
+	constructor(props) {
 		super(props);
 
 		this.switchView = this.switchView.bind(this);
