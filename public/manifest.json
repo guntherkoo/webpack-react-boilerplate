@@ -1,10 +1,10 @@
 {
-  "short_name": "React App Boilerplate",
+  "short_name": "Webpack React Boilerplate",
   "name": "Start any new project here",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "192x192",
+      "src": "./favicon.ico",
+      "sizes": "64x64",
       "type": "image/png"
     }
   ],

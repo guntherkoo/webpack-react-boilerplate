@@ -7,7 +7,7 @@ import { Route, HashRouter, Switch } from 'react-router-dom';
 import reducer from './reducers';
 import SettingsMiddlewares from './middlewares/SettingsMiddlewares';
 
-import Homepage from './components/Homepage';
+import Homepage from './pages/Homepage';
 
 const ua = window.navigator.userAgent;
 const html = document.querySelector('html');
