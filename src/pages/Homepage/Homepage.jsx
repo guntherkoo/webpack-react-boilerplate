@@ -3,6 +3,19 @@ import PropTypes from 'prop-types';
 import logo from 'assets/svg/logo.svg';
 import s from './Homepage.scss';
 
+const api = 'https://api.themoviedb.org/3/movie/2?api_key=f7b1557a908d86ec205d705bf4d509fb';
+
+async function getAPIResponse() {
+	try {
+		const res = await fetch(api);
+		const json = await res.json();
+
+		console.log(json);
+	} catch (err) {
+		console.log(err);
+	}
+}
+
 export default class Homepage extends Component {
 	static PropTypes = {
 		intro: PropTypes.bool,
@@ -34,6 +47,8 @@ export default class Homepage extends Component {
 		const container_classname = s('container', 'row', {
 			'advanced': this.state.view_type === 'advanced'
 		});
+
+		getAPIResponse();
 
 		return (
 			<div className={container_classname}>
