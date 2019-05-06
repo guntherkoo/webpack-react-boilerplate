@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import logo from 'assets/svg/logo.svg';
 import s from './Homepage.scss';
 
-const api = 'https://api.themoviedb.org/3/movie/2?api_key=f7b1557a908d86ec205d705bf4d509fb';
+const api = 'https://api.themoviedb.org/3/movie/now_playing?api_key=f7b1557a908d86ec205d705bf4d509fb';
 
 async function getAPIResponse() {
 	try {
 		const res = await fetch(api);
 		const json = await res.json();
 
-		console.log(json);
+		console.log(json, 'Success!');
 	} catch (err) {
-		console.log(err);
+		console.log(err, 'Error...');
 	}
 }
 
